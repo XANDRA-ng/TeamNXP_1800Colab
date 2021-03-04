@@ -15,7 +15,38 @@
     <!-- Optional styles and scripts of your own -->
     <style>
         form {
-            width: 500px;
+            width: 80%;
+            margin: 0 auto;
+        }
+        
+        .icon {
+            width: 150px;
+            position: relative;
+            height: 150px;
+            object-fit: cover;
+            border: 1pt solid gold;
+            display: grid;
+            grid-column: 1;
+        }
+        
+        .user {
+            width: 80%;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 180px 100%;
+        }
+        
+        .name {
+            display: grid;
+            grid-column: 2;
+            font-size: 24pt;
+            margin-top: 20pt;
+        }
+        
+        .username {
+            margin-top: -35pt;
+            font-size: 16pt;
+            color: goldenrod;
         }
     </style>
 
@@ -39,10 +70,10 @@
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Discovery</a>
+                        <a class="nav-link" href="Review.html">Discovery</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="profile.html" >Profile</a>
+                        <a class="nav-link" href="profile.html">Profile</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Setting</a>
@@ -50,40 +81,50 @@
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav><br>
 
-    <form>
-        <div class="form-group">
-          <label for="exampleFormControlInput1">Email Address</label>
-          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-        </div>
-        <div class="form-group">
-          <label for="exampleFormControlSelect1">Example select</label>
-          <select class="form-control" id="exampleFormControlSelect1">
+    <div class="profilename">
+        <div class="user">
+            <img src="images/pineapple.jpg" class="icon">
+            <div class="name">Random app
+                <div class="username">#application
+                    <div style="color: black;"> Version: 2.0</div>
+                </div>
+            </div>
+        </div><br>
+
+        <form>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Email Address</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Example select</label>
+                <select class="form-control" id="exampleFormControlSelect1">
             <option>1 Star</option>
             <option>2 Stars</option>
             <option>3 Stars</option>
             <option>4 Stars</option>
             <option>5 Stars</option>
           </select>
-        </div>
-        <div class="form-group">
-          <label for="exampleFormControlTextarea1">Review Textbox</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit Review</button>
-      </form>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Review Textbox</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Review</button>
+        </form>
 
 
-    <!----------------------------------------------->
-    <!-- JS: Boostrap, Firebase, API related    -->
-    <!----------------------------------------------->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
-    </script>
+        <!----------------------------------------------->
+        <!-- JS: Boostrap, Firebase, API related    -->
+        <!----------------------------------------------->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+        </script>
 
-    <!--------------------------------------------------------------------->
-    <!-- JS files: Your own JavaScript functions included here    -->
-    <!--------------------------------------------------------------------->
+        <!--------------------------------------------------------------------->
+        <!-- JS files: Your own JavaScript functions included here    -->
+        <!--------------------------------------------------------------------->
 
 </body>
 
