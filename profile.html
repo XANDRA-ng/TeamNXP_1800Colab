@@ -23,39 +23,44 @@
             display: grid;
             grid-column: 1;
         }
+        
         .user {
             width: 80%;
             margin: 0 auto;
             display: grid;
             grid-template-columns: 180px 100%;
         }
+        
         .name {
             display: grid;
             grid-column: 2;
             font-size: 24pt;
             margin-top: 20pt;
         }
-        .username{
+        
+        .username {
             margin-top: -35pt;
             font-size: 16pt;
             color: goldenrod;
         }
+        
         .body {
-          background-color: bisque;
+            background-color: rgb(160, 240, 128);
             display: grid;
             grid-template-columns: 50% 50%;
             width: 80%;
             margin: 0 auto;
         }
-        .accordian1{
+        
+        .accordian1 {
             display: grid;
             grid-column: 1;
         }
-        .accordian2{
+        
+        .accordian2 {
             display: grid;
             grid-column: 2;
         }
-
     </style>
 
 
@@ -76,13 +81,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="main.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Discovery</a>
+                        <a class="nav-link" href="Review.html">Discovery</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="profile.html" >Profile</a>
+                        <a class="nav-link" href="profile.html">Profile</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Setting</a>
@@ -106,51 +111,49 @@
     </div><br>
 
 
-      <div class="body">
+    <div class="body">
         <div class="accordion1" id="accordionExample">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                 Posts
               </button>
-            </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                 Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy <code>.accordion-body</code><br>
-                  <em style="font-size: 10pt; color: gray">Posted on this day/that month/other year</em>
-              </div>
-                <div class="accordion-body">
-                 Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy <code>.accordion-body</code><br>
-                  <em style="font-size: 10pt; color: gray">Posted on this day/that month/other year</em>
-              </div>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy
+                        Random thinggy Random thinggy Random thinggy <code>.accordion-body</code><br>
+                        <em style="font-size: 10pt; color: gray">Posted on this day/that month/other year</em>
+                    </div>
+                    <div class="accordion-body">
+                        Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy Random thinggy
+                        Random thinggy Random thinggy Random thinggy <code>.accordion-body</code><br>
+                        <em style="font-size: 10pt; color: gray">Posted on this day/that month/other year</em>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
 
-          <div class="accordion2" id="accordionExample">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        <div class="accordion2" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                 Listings
               </button>
-            </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                 App#1: App Name<br>
-                  Developer name<br>
-                  Release date<br><code>.accordion-body</code><br>
-                  <em style="font-size: 10pt; color: gray">Posted on this day/that month/other year</em>
-              </div>
-                <div class="accordion-body">
-                 App#2: App Name<br>
-                  Developer name<br>
-                  Release date<br><code>.accordion-body</code><br>
-                  <em style="font-size: 10pt; color: gray">Posted on this day/that month/other year</em>
-              </div>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        App#1: App Name<br> Developer name<br> Release date<br><code>.accordion-body</code><br>
+                        <em style="font-size: 10pt; color: gray">Posted on this day/that month/other year</em>
+                    </div>
+                    <div class="accordion-body">
+                        App#2: App Name<br> Developer name<br> Release date<br><code>.accordion-body</code><br>
+                        <em style="font-size: 10pt; color: gray">Posted on this day/that month/other year</em>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
+    </div>
 
     <footer>
         <p></p>
