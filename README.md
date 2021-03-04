@@ -20,7 +20,8 @@ Content of the project folder:
 ```
  Top level of project folder: 
 ├── .gitignore               # Git ignore file
-├── index.html               # landing HTML file, this is what users see when you come to url
+├── main.html                # landing HTML file, this is what users see when you come to url
+├── review.html              # Review page
 ├── profile.html 	     # what people see when they click on profile from navbar
 └── README.md
 
