@@ -1,39 +1,35 @@
-## My Web Application (Title)
+## My Web Application (NXP)
 
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Contents](#content)
 
 ## General Info
-This browser based web application to ...
+This browser based web application is for users and new developers to discover and add new applications/projects, and exchange feedback for the app with review features.
 	
 ## Technologies
 Technologies used for this project:
 * HTML, CSS
-* JavaScript
 * Bootstrap 
-* ...
+
 	
 ## Content
 Content of the project folder:
+
 
 ```
  Top level of project folder: 
 ├── .gitignore               # Git ignore file
 ├── index.html               # landing HTML file, this is what users see when you come to url
+├── profile.html 	     # what people see when they click on profile from navbar
 └── README.md
 
 It has the following subfolders and files:
-├── .git                     # Folder for git repo
 ├── images                   # Folder for images
-    /blah.jpg                # 
-├── scripts                  # Folder for scripts
-    /blah.js                 # 
-├── styles                   # Folder for styles
-    /blah.css                # 
+    /pineapple.jpg 
 
-Firebase hosting files: 
-├── .firebaserc...
+├── scripts                  # Folder for scripts
+├── styles                   # Folder for styles
 
 
 ```
