@@ -27,6 +27,8 @@ Content of the project folder:
 It has the following subfolders and files:
 ├── images                   # Folder for images
     /pineapple.jpg 
+    /Rick.jpg
+    /RickGIF.gif
 
 ├── scripts                  # Folder for scripts
 ├── styles                   # Folder for styles
