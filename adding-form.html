@@ -13,87 +13,123 @@
     <link rel="stylesheet" href="styles/adding-form.css">
 </head>
 
-<body class="container-sm text-warning">
+<body class="text-warning">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Team NXP</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="main.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Review.html">Discovery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Setting</a>
+                    </li>
+                    <li id="search">
+                        <form class="d-flex" >
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
 
     <div class="form-box">
-        <div class="login">
-           <div class="mb-3">
-                <label for="formFileMultiple" class="form-label">Insert icon:</label>
-                <input class="form-control" type="file" id="formFileMultiple" multiple>
-            </div>
+        <div class="header">
+            <h1>Let's get ready for your talents showcase</h1>
+            <h6>Just fill out the form below to list your application or idea, and that's is ;)</h6>
+        </div><hr><br>
+            <form class="row g-5">
+            <div class="col-md-6 ">
 
-    <div class="checked w-50">
-        <div class="row mb-1">
-            <div class="col-sm-10 offset-sm-0">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck1">
-                    <label class="form-check-label" for="gridCheck1">
-                        Application
-                    </label>
+                <b>What are you going to post?</b>
+                <div class="col-md-">
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck1">
+                        <label class="form-check-label" for="gridCheck1">
+                            Application
+                        </label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck1">
+                            Idea
+                        </label>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="row mb-3">
-            <div class="col-sm-10 offset-sm-0">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck2">
-                    <label class="form-check-label" for="gridCheck1">
-                        Idea
-                    </label>
+                <div class="col mb-3">
+                    <label for="formFileMultiple" class="form-label"><b>Icon:</b></label>
+                    <input class="form-control" type="file" id="formFileMultiple" multiple>
                 </div>
-            </div>
-        </div>
-    </div>
-
-            <form class="row g-3">
-                <div class="col-md-6">
-                    <label for="inputEmail4" class="form-label">Application/Ideas Name</label>
+                <div class="col mb-3">
+                    <label class="form-label">Application/Ideas Name</label>
                     <input type="email" class="form-control" id="inputEmail4">
                 </div>
-                <div class="col-md-6">
+                <div class="col mb-3">
                     <label for="inputPassword4" class="form-label">Developer Name</label>
-                    <input type="password" class="form-control" id="inputPassword4">
+                    <input type="text" placeholder="Your name, or your team name, etc." class="form-control" id="inputPassword4">
                 </div>
-                <div class="col-md-6">
-                    <label for="inputEmail4" class="form-label">Version</label>
-                    <input type="email" class="form-control" id="Version">
+                <div class="row g-3  mb-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Version:</label>
+                        <input type="email" class="form-control" id="Version">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputCity" class="form-label">Released date:</label>
+                        <input type="date" class="form-control" id="inputCity">
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <label for="inputCity" class="form-label">Released date:</label>
-                    <input type="date" class="form-control" id="inputCity">
+                <div class="col-md-">
+                    <label for="exampleDataList" class="form-label">Category:</label>
+                    <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="i.e. #meeting #tracking etc.">
+                    <datalist id="datalistOptions">
+                        <option value="#productivity">
+                        <option value="#productivity">
+                        <option value="Seattle">
+                        <option value="Los Angeles">
+                        <option value="Chicago">
+                    </datalist>
                 </div>
-                <div class="col-md-6">
-                    <label for="inputCity" class="form-label">Description</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
-                </div>
-                <div class="col-md-6">
-                    <label for="inputCity" class="form-label">Link</label>
-                    <input type="text" class="form-control" id="description">
-                </div>
-                <div class="col-md-4">
-                    <label for="inputState" class="form-label">State</label>
-                    <select id="inputState" class="form-select">
-                        <option selected>Choose...</option>
-                        <option>...</option>
-                    </select>
-                </div>
-                <div class="col-md-2">
-                    <label for="inputZip" class="form-label">Zip</label>
-                    <input type="text" class="form-control" id="inputZip">
-                </div>
-                <div class="col-12">
-                </div>
-                <div class="col-12 ">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+
+                <div class="col-md-6 ">
+                    <div class="col mb-3">
+                        <label for="inputCity" class="form-label">Description</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                    </div>
+                    <div class="col mb-3">
+                        <label for="inputCity" class="form-label">Link</label>
+                        <input type="text" class="form-control" id="description">
+                    </div>
+                    <div class="col mb-3">
+                        <label for="formFileMultiple" class="form-label">Photos:</label>
+                        <input class="form-control" type="file" id="addPhoto" multiple>
+                    </div>
+                    <div class="col">
+                        <label for="formFileMultiple" class="form-label">Add video:</label>
+                        <input class="form-control" type="file" id="addVid" multiple>
+                    </div>
+                    <div class="col-12 mt-5">
+                        <button type="submit" class="btn btn-primary float-end " id="submitButton">Submit</button>
+                        <a class="btn float-end" id="quit" >Save & Quite</a>
+                    </div>
                 </div>
             </form>
-
-
-
-
-        </div>
-    </div>
+</div>
 
 
 
