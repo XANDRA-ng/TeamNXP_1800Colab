@@ -10,7 +10,7 @@
     <!-- Bootstrap for Mobile-first, and JQuery -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-
+    <link href="styles/main.css" rel="stylesheet">
 
     <!-- Optional styles and scripts of your own -->
     <style>
@@ -24,6 +24,14 @@
             margin: 0 auto;
             display: block;
         }
+
+        @media only screen and (max-width: 768px) {
+
+        }
+
+        @media only screen and (min-width: 768px) {
+
+        }
     </style>
 
 </head>
@@ -34,13 +42,148 @@
     <!-- The following is HTML for layout -->
     <!-------------------------------------->
     <!-- Header Navigation Bar -->
-    <nav class="navBox">
-        <div class="navBar">
 
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Team NXP</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="main.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Review.html">Discovery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Setting</a>
+                    </li>
+                    <li id="search">
+                    <form class="d-flex" >
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                    </li>
+                </ul>
+              </div>
         </div>
     </nav>
 
+    <br>
+    <br>
 
+    <div class="container">
+      <div class="card text-white bg-danger mb-3">
+        <div class="card-header">Productivity</div>
+        <div class="card-body">
+        <div class="card-group" style = "margin-top: 10px;">
+          <div class="card">
+            <img class="card-img-top" style = "margin-top: 10px;" src="images/RickGIF.gif" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">App 1</h5>
+              <p class="card-text">Description</p>
+              <button type="button" class="btn btn-primary btn-sm">View Application</button>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img-top" style = "margin-top: 10px;" src="images/RickGIF.gif" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">App 2</h5>
+              <p class="card-text">Description</p>
+              <button type="button" class="btn btn-primary btn-sm">View Application</button>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img-top" style = "margin-top: 10px;" src="images/RickGIF.gif" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">App 3</h5>
+              <p class="card-text">Description</p>
+                <button type="button" class="btn btn-primary btn-sm">View Application</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="container">
+    <div class="card text-white bg-info mb-3">
+      <div class="card-header">Best Rated</div>
+      <div class="card-body">
+      <div class="card-group" style = "margin-top: 10px;">
+        <div class="card">
+          <img class="card-img-top" style = "margin-top: 10px;" src="images/RickGIF.gif" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">App 4</h5>
+            <p class="card-text">Description</p>
+            <button type="button" class="btn btn-primary btn-sm">View Application</button>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" style = "margin-top: 10px;" src="images/RickGIF.gif" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">App 5</h5>
+            <p class="card-text">Description</p>
+            <button type="button" class="btn btn-primary btn-sm">View Application</button>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" style = "margin-top: 10px;" src="images/RickGIF.gif" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">App 6</h5>
+            <p class="card-text">Description</p>
+              <button type="button" class="btn btn-primary btn-sm">View Application</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+
+  <div class="container">
+    <div class="card text-white bg-success mb-3">
+      <div class="card-header">Newly Posted Projects</div>
+      <div class="card-body">
+      <div class="card-group" style = "margin-top: 10px;">
+        <div class="card">
+          <img class="card-img-top" style = "margin-top: 10px;" src="images/RickGIF.gif" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">App 7</h5>
+            <p class="card-text">Description</p>
+            <button type="button" class="btn btn-primary btn-sm">View Application</button>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" style = "margin-top: 10px;" src="images/RickGIF.gif" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">App 8</h5>
+            <p class="card-text">Description</p>
+            <button type="button" class="btn btn-primary btn-sm">View Application</button>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" style = "margin-top: 10px;" src="images/RickGIF.gif" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">App </h5>
+            <p class="card-text">Description</p>
+              <button type="button" class="btn btn-primary btn-sm">View Application</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
     <footer>
         <p></p>

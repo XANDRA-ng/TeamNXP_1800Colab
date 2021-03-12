@@ -1,0 +1,21 @@
+.container img {
+    width: 60%;
+    margin: 0 auto;
+    display: block;
+}
+
+.container {
+    margin: 0 auto;
+    display: block;
+}
+
+
+@media only screen and (min-width: 768px) {
+    #search {
+        position: fixed;
+        right: 20pt;
+    }
+}
+@media only screen and (max-width: 768px) {
+
+}
