@@ -1,0 +1,14 @@
+body {
+    background-color: black;
+}
+.form-box {
+    margin: 50pt auto 0 auto;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .form-box {
+        margin: 20pt auto 0 auto;
+        width: 90%;
+    }
+}
