@@ -1,14 +1,17 @@
 body {
-    background-color: black;
+    color: black;
 }
 .form-box {
     margin: 50pt auto 0 auto;
+    padding: 50pt;
+    background-color: #F8F8F8;
 }
 #submitButton{
 }
-#quit{
-    color: darkgoldenrod;
-}
+/* #quit{
+    background-color: #f0ad4e;
+    color: black;
+} */
 
 @media only screen and (max-width: 768px) {
     .form-box {
