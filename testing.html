@@ -14,16 +14,6 @@
 
     <body class="text-warning">
 
-            <div class="container text-center">
-                <label>Enter city:</label>
-                <input type="text" id="city">
-                <label>Enter new:</label>
-                <input type="text" id="city1">
-                <label>Enter value:</label>
-                <input type="text" id="city2">
-                <button id="submit">Submit</button>
-            </div>
-
         <div class="form-box">
             <div class="header">
                 <h1>Let's get ready for your talents showcase</h1>
@@ -36,7 +26,7 @@
                     <b>What are you going to post?</b>
                     <div class="col-md-">
                         <div class="form-check mb-2">
-                            <input class="form-check-input" type="checkbox" id="app">
+                            <input class="form-check-input" type="checkbox" id="application">
                             <label class="form-check-label" for="gridCheck1">
                                 Application
                             </label>
@@ -79,7 +69,7 @@
                 <div class="col-md-6 ">
                     <div class="col mb-3">
                         <label for="inputCity" class="form-label">Description:</label>
-                        <textarea class="form-control" id="desc" rows="5"></textarea>
+                        <textarea type="text" class="form-control" id="desc" rows="5"></textarea>
                     </div>
                     <div class="col mb-3">
                         <label for="inputCity" class="form-label">Link</label>
@@ -94,11 +84,15 @@
                         <input class="form-control" type="file" id="vid" multiple>
                     </div>
                     <div class="col-12 mt-5">
-                        <button type="submit" class="btn btn-primary float-end " id="submit2">Submit</button>
-                        <a class="btn float-end" id="quit" >Save & Quit</a>
+                        <a class="float-end btn" id="quit" >Save and Quit</a>
                     </div>
                 </div>
             </form>
+
+
+            <div class="container text-center" id="">
+                <button id="submit" class="btn btn-primary float-end">Submit</button>
+            </div>
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
@@ -110,9 +104,7 @@
         <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
         <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
 
-        <script src="scripts/firebase_api.js"></script>
-
-
+        <script src="scripts/testing.js"></script>
 
     </body>
 

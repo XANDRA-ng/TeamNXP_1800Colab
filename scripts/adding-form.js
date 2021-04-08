@@ -1,20 +1,24 @@
-/*
-const form = document.querySelectorAll("#name");
-submit = form[0].querySelector('input[type="submit"]');
+$(document).ready(function() {
 
-function addingApp() {
+    function getApp() {
+        document.getElementById("submit").addEventListener('click', function() {
+            firebase.auth().onAuthStateChanged(function(user) {
+                var n = document.getElementById("name").value;
+                var dn = document.getElementById("devname").value;
+                var desc = document.getElementById("desc").value;
+                console.log(n);
+                console.log(dn);
+                console.log(desc);
 
-    var app = new FormData(form[0]);
+                db.collection("apps")
+                    .add({
+                        "name": n, //from text field
+                        "dev_name": dn,
+                        "description": desc
+                    })
 
-    var app = db.collection("apps");
-    app.add({
-        appName: app.get('#name'),
-        devName: app.get('#devname')
-    });
-};
-
-document.addEventListener('DOMLoaded', function(){
-    submit.addEventListener('click', addingApp, false);
+            })
+        })
+    }
+    getApp();
 });
-
-
