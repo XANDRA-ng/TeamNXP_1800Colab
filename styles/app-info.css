@@ -86,7 +86,6 @@ body {
     }
     #review {
         height: 200px;
-        overflow-y: scroll;
     }
     #photo-box {
         height: 200px;
