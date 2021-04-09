@@ -1,0 +1,45 @@
+body {
+    width: 100%;
+    background-color: black;
+}
+
+.container {
+    text-align: center;
+
+}
+
+.row {
+    margin-top: 100px;
+}
+
+.col {
+    text-align: center;
+}
+
+img {
+    max-width: 150px;
+
+    margin-top: 50px;
+    border: 1pt solid gold;
+}
+
+h1 {
+    color: gold;
+}
+
+.button1 {
+    width: 100%;
+}
+
+@media only screen and (max-width: 768px) {}
+
+
+
+@media only screen and (min-width: 768px) {}
+
+
+
+button {
+    text-align: center;
+
+}
