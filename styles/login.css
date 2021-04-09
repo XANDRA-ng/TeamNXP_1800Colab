@@ -2,20 +2,36 @@ body {
     width: 100%;
     background-color: black;
 }
+
 .container {
     display: flex;
     align-items: center;
     height: 100vh;
 }
+
 .login {
     margin: 0 auto;
     text-align: center;
-    box-shadow: 0px 0px 15px yellow;
+    box-shadow: 0px 0px 15px gold;
     background-color: black;
+    padding-bottom: 8pt;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {}
 
+.login {
+    width: 80%;
 }
 
+#logo {
+    width: 60%;
+    margin: 0 auto;
+    display: block;
+}
 
+@media only screen and (min-width: 768px) {}
+
+.loginbox {
+    width: 350px;
+    margin: 0 auto;
+}
