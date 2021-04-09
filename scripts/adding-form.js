@@ -1,4 +1,4 @@
-/*
+
 const form = document.querySelectorAll("#name");
 submit = form[0].querySelector('input[type="submit"]');
 
