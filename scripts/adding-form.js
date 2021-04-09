@@ -28,10 +28,11 @@ $(document).ready(function() {
                         "link": link,
                         "description": desc,
                     })
-                window.location.href = "completely-added.html"
 
             })
+
         })
     }
     getApp();
+
 });

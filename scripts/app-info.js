@@ -1,4 +1,4 @@
-function ShowCollection() {
+/* function ShowCollection() {
     db.collection("test")
         .get() //get whole collection
         .then(function(snap) {
@@ -20,4 +20,41 @@ function ShowCollection() {
             })
         })
 }
-showCollection();
+showCollection();/*/
+
+//--------------------------------------------------------------------------
+
+// use this ID to read from firestore
+$(document).ready(function() {
+    function getDetails() {
+        // https://some.site/?id=123
+        const parsedUrl = new URL(window.location.href);
+        console.log(parsedUrl.searchParams.get("id")); // "123"
+
+        // extract id from url, assign to variable
+        var id = parsedUrl.searchParams.get("id");
+        console.log(id);
+
+        // use this ID to read from firestore
+        db.collection("apps")
+            .doc(id) //webcam ID that we extracted
+            .get() //READ asynch
+            .then(function(doc) { // display details!
+                var name = doc.data().name;
+                var devname = doc.data().dev_name;
+                console.log(name);
+                //var geo_area = doc.data().fields.geo_local_area;
+                //var coord = doc.data().fields.geom.coordinates; //know your json data
+                //var url = doc.data().fields.url;
+                $("#app-name").text(name);
+                $("#dev-name").text(devname);
+                //$("#details-go-here").append("<h1> " + geo_area + "</h1>");
+                //$("#details-go-here").append("<h1> " + coord + "</h1>");
+                //$("#details-go-here").append("<a href='" + url + "' > " + url);
+                // var likeid = "like" + id;
+                //$("#details-go-here").append("<h1 id='" + likeid + "' > CLICK HERE TO LIKE </h1>");
+                //addLikeListener(id, likeid);
+            })
+    }
+    getDetails();
+})
