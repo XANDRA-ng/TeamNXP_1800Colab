@@ -12,39 +12,43 @@
     <link rel="stylesheet" href="styles/app-info.css">
 </head>
 
-<body class="text-warning">
+<body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-warning">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Team NXP</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+    <div id="navbar">
+        <nav class="navbar navbar-expand-sm">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="main.html">
+                    <img src="./images/logo.png" alt="logo" id="logo">
+                </a>
+                <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="main.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Review.html">Discovery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="profile.html">Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Setting</a>
-                    </li>
-                    <li id="search">
-                        <form class="d-flex">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form>
-                    </li>
-                </ul>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" style="color: rgb(21, 177, 55)" aria-current="page" href="main.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color: rgb(21, 177, 55)" href="">Discovery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color: rgb(21, 177, 55)" href="">Notification</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color: rgb(21, 177, 55)" href="profile.html"><span id="username">username</span></a>
+                        </li>
+                        <li id="search">
+                            <form class="d-flex">
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit">Search</button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </div>
     <br>
 
     <div id="info-wrapper">
@@ -67,43 +71,34 @@
                     </div>
                 </div>
                 <div id="photo-box">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                        </div>
-                        <div class="carousel-inner" id="photo-height">
-                            <div class="carousel-item active">
-                                <img src="./images/pfp3.png" class="d-block w-100 center" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="./images/logo.png" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="./images/logo.png" class="d-block w-100" alt="...">
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
+                    <div><img class="photo" src="./images/logo.png"></div>
+                    <div><img class="photo" src="./images/logo.png"></div>
+                    <div><img class="photo" src="./images/logo.png"></div>
                 </div>
             </div>
 
             <div id="right-container">
                 <div id="description-box">Description</div>
                 <div id="review-box">
-                    <div id="review">
-                        <div> Before we begin, let us outline the layout features we want to accomplish: 1. The scrolling container must follow the overall layout of the page — i.e., respecting the margins and padding 2. Part of the scrollable content must
-                            peek out from the edge 3. The content of the container must slide off the edges of the screen when scrolling 4. The gutter between the content must be smaller than that of the edges, so that there will be more space at either
-                            end of the container (indicating to the user that they have scrolled to t…
-                        </div>
+                    <div id="review" class="container">
+                        <div class="card">
+                            <div class="card-body">
+                              <h5 class="card-title">Card title</h5>
+                              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                              <a href="#" class="card-link">Card link</a>
+                              <a href="#" class="card-link">Another link</a>
+                            </div>
+                          </div>
+                          <div class="card">
+                            <div class="card-body">
+                              <h5 class="card-title">Card title</h5>
+                              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                              <a href="#" class="card-link">Card link</a>
+                              <a href="#" class="card-link">Another link</a>
+                            </div>
+                          </div>
                     </div>
                     <div id="review-input">
                         <div>
@@ -131,9 +126,11 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
 
     <script src="scripts/firebase_api.js"></script>
     <script src="scripts/app-info.js"></script>
+    <script src="./scripts/my_functions.js"></script>
 
 </body>
 
