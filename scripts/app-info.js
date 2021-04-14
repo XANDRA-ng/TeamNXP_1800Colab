@@ -31,16 +31,57 @@ $(document).ready(function() {
                 $("#link").append("<a href='" + link + "' > " + link);
                 $("#version").text("Version: " + version);
                 $("#date").text("Release date: " + date);
-                $("#description").text(+description);
-                //$("#details-go-here").append("<a href='" + url + "' > " + url);
-                // var likeid = "like" + id;
-                //$("#details-go-here").append("<h1 id='" + likeid + "' > CLICK HERE TO LIKE </h1>");
-                //addLikeListener(id, likeid);
+                $("#description").text(description);
             })
     }
     getDetails();
 
-    function getReview() {
+    function getReviews() {
+        document.getElementById("submit-button").addEventListener('click', function() {
+            firebase.auth().onAuthStateChanged(function(user) {
+                const parsedUrl = new URL(window.location.href);
+                console.log(parsedUrl.searchParams.get("id")); // "123"
+
+                // extract id from url, assign to variable
+                var id = parsedUrl.searchParams.get("id");
+                console.log(id + " this app id");
+
+                console.log(user.uid);
+                db.collection("users").doc(user.uid)
+                    .get()
+                    .then(function(doc) {
+                        var reviewer_name = doc.data().name;
+                        var review = document.getElementById("review-type").value;
+                        db.collection("apps")
+                            .doc(id)
+                            .collection("review")
+                            .add({
+                                "reviewer_name": reviewer_name, //from text field
+                                "review-input": review, //from checkbox
+                            })
+                        console.log("review added" + review + reviewer_name);
+                    })
+
+            })
+        })
+    }
+    getReviews();
+
+    function getUserID() {
+        firebase.auth().onAuthStateChanged(function(user) {
+            // User is signed in.
+            // Do something for the user here. 
+            console.log(user.uid);
+            db.collection("users").doc(user.uid)
+                .get()
+                .then(function(doc) {
+                    var n = doc.data().name;
+                    console.log(n + "get by function");
+                })
+
+        })
+    }
+    /**function getReview() {
         document.getElementById("submit").addEventListener('click', function() {
 
             const parsedUrl = new URL(window.location.href);
@@ -52,7 +93,7 @@ $(document).ready(function() {
 
             firebase.auth().onAuthStateChanged(function(user) {
                 var reviewDesc = document.getElementById("reviewDesc").value;
-
+                console.log(reviewDesc);
                 db.collection("reviews")
                     .add({
                         "review_description": reviewDesc,
@@ -62,5 +103,7 @@ $(document).ready(function() {
 
         })
     }
-    getReview();
-})
+    getReview();*/
+
+
+});
