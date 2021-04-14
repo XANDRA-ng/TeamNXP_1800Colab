@@ -20,13 +20,11 @@ $(document).ready(function() {
             }
         });
     }
-
     sayHello();
 
     function displayWebcams() {
         //console.log("inside display web cams");
         db.collection("apps")
-            //.where("fields.geo_local_area", "in", ["Downtown", "Oakridge"]) //new query to look for field in a set/array
             .get() //READ asynch
             .then(function(snapcollection) {
                 snapcollection.forEach(function(doc) {
@@ -34,8 +32,14 @@ $(document).ready(function() {
                     console.log(doc.id);
                     var id = doc.id; //document id of that webcam
                     var name = doc.data().name;
-                    //$('#webcams-go-here').append($('<p id = ${id}> ${name} </p>'));
-                    $("#app-goes-here").append("<p style='cursor:pointer, color:white' id='" + id + "'>" + name + "</p>");
+                    var dev_name = doc.data().dev_name;
+
+                    var codeString = '<div class="card-body">'+
+                    '<h2 class="card-title">' + name + '</h2>'+
+                    '<p class="card-text">Developer: ' + dev_name + '</p>'+
+                    '<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>'
+
+                    $("#app-goes-here").append("<div style='cursor:pointer, color:white' id='" + id + "'>" + codeString + "</div>");
                     addWebcamListener(id);
                 })
             })
@@ -52,4 +56,27 @@ $(document).ready(function() {
             });
     }
 
+    // function ShowCollection(){
+    //     db.collection("apps")
+    //         .get()    //get whole collection
+    //     .then(function(snap){
+    //         snap.forEach(function(doc){          //cycle thru each doc 
+    //             // do something with each document
+    //             var name = doc.data().name;   //key "name"
+    //             var dev_name = doc.data().dev_name;    //key "dev name"
+                
+    //             // construct the string for card
+    //             var codestring = '<div>'+
+    //             '<div class="card-body">'+
+    //             '<h2 class="card-title">' + name + '</h2>'+
+    //             '<p class="card-text">Developer: ' + dev_name + '</p>'+
+    //             '<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>'+
+    //             '</div>';
+    //             // append with jquery to DOM
+    //             $("#cards-go-here").append(codestring);
+    //         })
+    //     })
+    // }
+    // showCollection();
+    
 });
