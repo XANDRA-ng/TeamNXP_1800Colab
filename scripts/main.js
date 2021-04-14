@@ -37,7 +37,7 @@ $(document).ready(function() {
                     var codeString = '<div class="card-body">'+
                     '<h2 class="card-title">' + name + '</h2>'+
                     '<p class="card-text">Developer: ' + dev_name + '</p>'+
-                    '<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>'
+                    '<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>';
 
                     $("#app-goes-here").append("<div style='cursor:pointer, color:white' id='" + id + "'>" + codeString + "</div>");
                     addWebcamListener(id);

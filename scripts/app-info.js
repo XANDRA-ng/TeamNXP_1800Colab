@@ -33,7 +33,7 @@ $(document).ready(function() {
 
         // extract id from url, assign to variable
         var id = parsedUrl.searchParams.get("id");
-        console.log(id);
+        console.log(id + " is id");
 
         // use this ID to read from firestore
         db.collection("apps")
@@ -57,4 +57,28 @@ $(document).ready(function() {
             })
     }
     getDetails();
+
+    function getReview() {
+        document.getElementById("submit").addEventListener('click', function() {
+
+            const parsedUrl = new URL(window.location.href);
+            console.log(parsedUrl.searchParams.get("id")); // "123"
+    
+            // extract id from url, assign to variable
+            var id = parsedUrl.searchParams.get("id");
+            console.log(id + " is id");
+
+            firebase.auth().onAuthStateChanged(function(user) {
+                var reviewDesc = document.getElementById("reviewDesc").value;
+
+                db.collection("reviews")
+                    .add({
+                        "review_description": reviewDesc,
+                    })
+
+            })
+
+        })
+    }
+    getReview();
 })
