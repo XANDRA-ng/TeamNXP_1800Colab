@@ -34,10 +34,10 @@ $(document).ready(function() {
                     var name = doc.data().name;
                     var dev_name = doc.data().dev_name;
 
-                    var codeString = '<div class="card-body">'+
-                    '<h2 class="card-title">' + name + '</h2>'+
-                    '<p class="card-text">Developer: ' + dev_name + '</p>'+
-                    '<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>';
+                    var codeString = '<div class="card-body">' +
+                        '<h2 class="card-title">' + name + '</h2>' +
+                        '<p class="card-text">By' + dev_name + '</p>' +
+                        '<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>'
 
                     $("#app-goes-here").append("<div style='cursor:pointer, color:white' id='" + id + "'>" + codeString + "</div>");
                     addWebcamListener(id);
@@ -56,27 +56,5 @@ $(document).ready(function() {
             });
     }
 
-    // function ShowCollection(){
-    //     db.collection("apps")
-    //         .get()    //get whole collection
-    //     .then(function(snap){
-    //         snap.forEach(function(doc){          //cycle thru each doc 
-    //             // do something with each document
-    //             var name = doc.data().name;   //key "name"
-    //             var dev_name = doc.data().dev_name;    //key "dev name"
-                
-    //             // construct the string for card
-    //             var codestring = '<div>'+
-    //             '<div class="card-body">'+
-    //             '<h2 class="card-title">' + name + '</h2>'+
-    //             '<p class="card-text">Developer: ' + dev_name + '</p>'+
-    //             '<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>'+
-    //             '</div>';
-    //             // append with jquery to DOM
-    //             $("#cards-go-here").append(codestring);
-    //         })
-    //     })
-    // }
-    // showCollection();
-    
+
 });

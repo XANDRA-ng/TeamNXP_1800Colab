@@ -65,11 +65,12 @@
                         <div id="category">Category</div>
                     </div>
                     <div id="link-box">
-                        <div id="link">Link</div>
+                        <div id="link">Link: </div>
                         <div id="version">Version</div>
                         <div id="date">Release date:</div>
                     </div>
                 </div>
+                <label class="form-label"><b>Photos:</b></label>
                 <div id="photo-box">
                     <div><img class="photo" src="./images/logo.png"></div>
                     <div><img class="photo" src="./images/logo.png"></div>
@@ -78,36 +79,44 @@
             </div>
 
             <div id="right-container">
-                <div id="description-box">Description</div>
+                <label class="form-label"><b>Description</b></label>
+                <div id="description-box">
+                    <div id="description">
+                    </div>
+                </div>
+                <br>
+
                 <div id="review-box">
+                    <label for="inputCity" class="form-label"><b>Review</b></label>
                     <div id="review">
                         <div class="card">
                             <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <a href="#" class="card-link">Card link</a>
-                              <a href="#" class="card-link">Another link</a>
+                                <h5 class="card-title">Card title</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="card-link">Card link</a>
+                                <a href="#" class="card-link">Another link</a>
                             </div>
-                          </div>
-                          <div class="card">
+                        </div>
+                        <div class="card">
                             <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <a href="#" class="card-link">Card link</a>
-                              <a href="#" class="card-link">Another link</a>
+                                <h5 class="card-title">Card title</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="card-link">Card link</a>
+                                <a href="#" class="card-link">Another link</a>
                             </div>
-                          </div>
+                        </div>
                     </div>
+                    <br>
+                    <label class="form-label" required><b>Review</b></label>
                     <div id="review-input">
                         <div>
-                            <label for="inputCity" class="form-label" required>Review input</label>
-                            <textarea class="form-control" id="reviewDesc" rows="5"></textarea>
+                            <textarea class="form-control mb-3" id="review-type" rows="5"></textarea>
                         </div>
                         <div>
-                            <a href="completely-added.html" button class="btn btn-warning float-end" id="submit">Submit</a>
-                            <a class="btn float-end text-warning" id="Cancel">Cancel</a>
+                            <button type="button" class="btn btn-success float-end" id="submit-button">Submit</button>
+                            <a class="btn float-end " style="color:  rgb(212, 0, 131)" id="Cancel">Cancel</a>
                         </div>
                     </div>
                 </div>

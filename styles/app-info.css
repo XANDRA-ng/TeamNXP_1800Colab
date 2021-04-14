@@ -34,33 +34,30 @@ body {
 
 #photo-box {
     margin: 5pt;
-    box-shadow: 0px 0px 8px rgb(116, 116, 116);
     overflow-y: scroll;
 }
 
 .photo {
     width: 100%;
+    margin-bottom: 10pt;
 }
 
 #info-box {
     margin: 5pt;
-    box-shadow: 0px 0px 8px rgb(116, 116, 116);
 }
 
 #description-box {
     margin: 5pt;
-    box-shadow: 0px 0px 8px rgb(116, 116, 116);
+    overflow-y: scroll;
 }
 
 #review {
     margin: 5pt;
-    box-shadow: 0px 0px 8px rgb(116, 116, 116);
     overflow-y: scroll;
 }
 
 #review-input {
     margin: 5pt;
-    box-shadow: 0px 0px 8px rgb(116, 116, 116);
 }
 
 @media only screen and (max-width: 768px) {
@@ -68,27 +65,49 @@ body {
         width: 100px;
     }
     #icon {
-        max-width: 200px;
-        max-height: 200px;
+        max-width: 120px;
+        max-height: 120px;
         object-fit: cover;
-        margin: 0 auto;
         display: block;
+        border-radius: 5px;
     }
     #icon-box {
-        margin-bottom: 10pt;
+        display: grid;
+        grid-row: 1;
+        grid-column: 1;
     }
     #name-box {
-        text-align: center;
+        display: grid;
+        grid-row: 1;
+        grid-column: 2;
+        margin-left: 5pt;
+    }
+    #info-box {
+        display: grid;
+        grid-row: 1;
+        grid-template-columns: 35% 65%;
+        grid-template-rows: 60% 40%;
+        grid-gap: 1em;
+        margin-bottom: 20pt;
     }
     #app-name {
         font-size: 1.5em;
         font-weight: bold;
     }
+    #link-box {
+        display: grid;
+        grid-row: 2;
+        grid-column: 1 / span 2;
+    }
+    #description-box {
+        max-width: 250px;
+    }
     #review {
         height: 200px;
     }
     #photo-box {
-        height: 200px;
+        height: 350px;
+        margin-bottom: 20pt;
     }
 }
 
@@ -114,17 +133,25 @@ body {
     #description-box {
         display: grid;
         grid-row: 1;
+        box-shadow: 0px 0px 8px rgb(116, 116, 116);
     }
     #review-box {
         display: grid;
         grid-row: 2;
     }
+    #review-input {
+        box-shadow: 0px 0px 8px rgb(116, 116, 116);
+    }
+    #review {
+        box-shadow: 0px 0px 8px rgb(116, 116, 116);
+    }
     #info-box {
         display: grid;
         grid-row: 1;
         grid-template-columns: 40% 60%;
-        grid-row: 40% 60%;
+        grid-template-rows: 60% 40%;
         grid-gap: 1em;
+        box-shadow: 0px 0px 8px rgb(116, 116, 116);
     }
     #icon {
         width: 100%;
@@ -159,5 +186,6 @@ body {
     #photo-box {
         display: grid;
         grid-row: 2;
+        box-shadow: 0px 0px 8px rgb(116, 116, 116);
     }
 }
