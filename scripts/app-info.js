@@ -1,27 +1,3 @@
-/* function ShowCollection() {
-    db.collection("test")
-        .get() //get whole collection
-        .then(function(snap) {
-            snap.forEach(function(doc) { //cycle thru each doc 
-                // do something with each document
-                var pic = doc.data().picture; //key "picture"
-                var title = doc.data().name; //key "name"
-
-                // construct the string for card
-                var codestring = '<div>' +
-                    '<img src="images/' + pic + '" class="card-img-top">' +
-                    '<div class="card-body">' +
-                    '<h5 class="card-title">' + title + '</h5>' +
-                    '<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>' +
-                    '<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>' +
-                    '</div>';
-                // append with jquery to DOM
-                $("#review").append(codestring);
-            })
-        })
-}
-showCollection();/*/
-
 //--------------------------------------------------------------------------
 
 // use this ID to read from firestore
@@ -42,14 +18,20 @@ $(document).ready(function() {
             .then(function(doc) { // display details!
                 var name = doc.data().name;
                 var devname = doc.data().dev_name;
+                var category = doc.data().category;
+                var link = doc.data().link;
+                var version = doc.data().version;
+                var date = doc.data().date;
+                var description = doc.data().description;
                 console.log(name);
-                //var geo_area = doc.data().fields.geo_local_area;
-                //var coord = doc.data().fields.geom.coordinates; //know your json data
-                //var url = doc.data().fields.url;
                 $("#app-name").text(name);
-                $("#dev-name").text(devname);
-                //$("#details-go-here").append("<h1> " + geo_area + "</h1>");
-                //$("#details-go-here").append("<h1> " + coord + "</h1>");
+                $("#dev-name").text("By: " + devname);
+                //$("#dev-name").text("By: " + devname);
+                $("#category").text(category);
+                $("#link").append("<a href='" + link + "' > " + link);
+                $("#version").text("Version: " + version);
+                $("#date").text("Release date: " + date);
+                $("#description").text("Release date: " + description);
                 //$("#details-go-here").append("<a href='" + url + "' > " + url);
                 // var likeid = "like" + id;
                 //$("#details-go-here").append("<h1 id='" + likeid + "' > CLICK HERE TO LIKE </h1>");
