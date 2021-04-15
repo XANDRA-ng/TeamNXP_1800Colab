@@ -35,13 +35,16 @@ $(document).ready(function() {
                     var dev_name = doc.data().dev_name;
 
                     var codeString = '<div class="card mb-3">' +
-                        '<div class="row g-0">' + '<div class="col-md-4">' +
-                        '<img src="images/pineapple.jpg" class="card-img-top" style = "width: 140px";>'+ 
+                        '<div class="row g-0">' +
+                        '<div class="col-md-4">' +
+                        '<img src="images/pineapple.jpg" class="card-img-top" style = "width: 140px";>' +
+                        '</div>' +
+                        '<div class="col-md-8">' +
                         '<div class="card-body">' +
                         '<h2 class="card-title">' + name + '</h2>' +
                         '<p class="card-text">By ' + dev_name + '</p>' +
                         '<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>' +
-                        '</div>' + '</div>' + '</div>'
+                        '</div>' + '</div>' + '</div>'  + '</div>' 
 
                     $("#app-goes-here").append("<div style='cursor:pointer, color:white' id='" + id + "'>" + codeString + "</div>");
                     addWebcamListener(id);
