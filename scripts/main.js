@@ -22,7 +22,7 @@ $(document).ready(function() {
     }
     sayHello();
 
-    function displayWebcams() {
+    function displayAllApps() {
         //console.log("inside display web cams");
         db.collection("apps")
             .get() //READ asynch
@@ -38,20 +38,20 @@ $(document).ready(function() {
                         '<div class="row g-0 row-cols-auto" >' + '<div class="col-4">' +
                         '<img src="images/pineapple.jpg" style = "width: 100px; padding: 5pt";>' +
                         '</div>' +
-                        '<div class="col-7 align-self-center">' +
+                        '<div class="col-7 align-self-center mt-3">' +
                         '<div>' +
                         '<h4>' + name + '</h4>' +
                         '<p>By: ' + dev_name + '</p>' +
                         '</div>' + '</div>'
 
-                    $("#app-goes-here").append("<div style='cursor:pointer, color:white' id='" + id + "'>" + codeString + "</div>");
-                    addWebcamListener(id);
+                    $("#app-goes-here").append("<div style='cursor:pointer' id='" + id + "'>" + codeString + "</div>");
+                    addAppsListener(id);
                 })
             })
     }
-    displayWebcams();
+    displayAllApps();
 
-    function addWebcamListener(id) {
+    function addAppsListener(id) {
         document.getElementById(id)
             .addEventListener("click", function() {
                 console.log(id + "was clicked!")

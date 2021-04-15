@@ -50,7 +50,7 @@ $(document).ready(function() {
                         var review = document.getElementById("review-type").value;
                         var postDate = new Date();
                         var dateString = postDate.toString();
-                        console.log(postDate);
+                        //console.log(postDate);
                         db.collection("apps")
                             .doc(id)
                             .collection("review")
@@ -70,7 +70,6 @@ $(document).ready(function() {
         })
     }
     getReviews();
-    //showReviews(id);
 
     function showReviews(id) {
         db.collection("apps")
@@ -84,7 +83,7 @@ $(document).ready(function() {
                     var display_name = doc.data().reviewer_name;
                     var display_date = doc.data().reviewDate;
 
-                    console.log(display_date);
+                    //console.log(display_date);
                     var eachReview = '<div class="review-box">' +
                         '<h5 class="reviewer-name">' + display_name + '</h5>' +
                         '<p class="review-comment">' + display_review + '</p>' +
@@ -102,25 +101,31 @@ $(document).ready(function() {
         db.collection("apps")
             .doc(id)
             .collection("review")
-            .onSnapshot((snap) => {
-                snap.docChanges().forEach(function(change) {
-                    if (change.type === "added") {
-                        var one_review = change.doc.data().review_input;
-                        var one_name = change.doc.data().reviewer_name;
-                        var one_date = change.doc.data().reviewDate;
-                        console.log(one_review);
-                        var oneReview = '<div class="review-box">' +
-                            '<h5 class="reviewer-name">' + one_name + '</h5>' +
-                            '<p class="review-comment">' + one_review + '</p>' +
-                            '<p class="review-date"><small class="text-muted">' + one_date +
-                            '</small></p>'
+            .orderBy("reviewDate", "desc").limit(1)
+            .get()
+            .then(function(snapCollection) {
+                snapCollection.forEach(function(doc) {
+                    var display_review = doc.data().review_input;
+                    var display_name = doc.data().reviewer_name;
+                    var display_date = doc.data().reviewDate;
 
-                        $("#review").append("<div style='color:white' class='review-card'>" + oneReview + "</div>");
-                    }
+                    //console.log(display_date);
+                    var eachReview = '<div class="review-box">' +
+                        '<h5 class="reviewer-name">' + display_name + '</h5>' +
+                        '<p class="review-comment">' + display_review + '</p>' +
+                        '<p class="review-date"><small class="text-muted">' + display_date +
+                        '</small></p>'
+
+                    $("#review").append("<div style='color:white' class='review-card'>" + eachReview + "</div>");
                 })
 
             })
+
     }
+
+
+
+
 
 
 });
