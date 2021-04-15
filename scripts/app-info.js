@@ -57,9 +57,13 @@ $(document).ready(function() {
                             .collection("review")
                             .add({
                                 "reviewer_name": reviewer_name, //from text field
-                                "review-input": review, //from checkbox
+                                "review_input": review, //from checkbox
                             })
                         console.log("review added" + review + reviewer_name);
+                    })
+                    .then(function() {
+                        console.log("get collection of review")
+                        showReviews(id)
                     })
 
             })
@@ -67,20 +71,24 @@ $(document).ready(function() {
     }
     getReviews();
 
-    function getUserID() {
-        firebase.auth().onAuthStateChanged(function(user) {
-            // User is signed in.
-            // Do something for the user here. 
-            console.log(user.uid);
-            db.collection("users").doc(user.uid)
-                .get()
-                .then(function(doc) {
-                    var n = doc.data().name;
-                    console.log(n + "get by function");
+    function showReviews(id) {
+        db.collection("apps")
+            .doc(id)
+            .collection("review")
+            .get()
+            .then(function(snapCollection) {
+                snapCollection.forEach(function(doc) {
+                    var display_review = doc.data().review_input;
+                    var display_name = doc.data().reviewer_name;
+                    console.log(display_name + " :get name successfully");
+                    console.log(display_review + " :get review successfully");
+                    // var eachReview =
                 })
 
-        })
+            })
+
     }
+
     /**function getReview() {
         document.getElementById("submit").addEventListener('click', function() {
 
