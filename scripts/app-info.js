@@ -93,26 +93,11 @@ $(document).ready(function() {
 
             firebase.auth().onAuthStateChanged(function(user) {
                 var reviewDesc = document.getElementById("reviewDesc").value;
-<<<<<<< HEAD
-
-                db.collection("users")
-                .doc(user.uid)
-                .collection("reviews")
-                .add({
-                    "reviewText": reviewDesc   //from text field
-                })
-
-                // db.collection("reviews")
-                //     .add({
-                //         "review_description": reviewDesc,
-                //     })
-=======
                 console.log(reviewDesc);
                 db.collection("reviews")
                     .add({
                         "review_description": reviewDesc,
                     })
->>>>>>> 9f351ca2c821ca2443a84763988b8b984a28daaa
 
             })
 
