@@ -33,10 +33,11 @@ $(document).ready(function() {
                     var name = doc.data().name; //name value of the document
                     var dev_name = doc.data().dev_name;
                     var category = doc.data().category;
+                    var icon = doc.data().IconPic;
 
                     var codeString = '<div class="each-app" style ="width: 90%">' +
                         '<div class="row g-0 row-cols-auto" >' + '<div class="col-4">' +
-                        '<img src="images/pineapple.jpg" style = "width: 100px; padding: 5pt";>' +
+                        '<img src="' + icon + '" style = "width: 100px; padding: 5pt";>' +
                         '</div>' +
                         '<div class="col-7 align-self-center">' +
                         '<div>' +
