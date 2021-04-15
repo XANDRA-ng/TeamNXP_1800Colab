@@ -33,8 +33,10 @@ body {
 }
 
 #photo-box {
-    margin: 5pt;
+    margin-bottom: 5pt;
+    margin-top: 5pt;
     overflow-y: scroll;
+    border: 1px solid rgb(212, 0, 131);
 }
 
 .photo {
@@ -52,8 +54,20 @@ body {
 }
 
 #review {
-    margin: 5pt;
+    margin-bottom: 5pt;
+    margin-top: 5pt;
     overflow-y: scroll;
+    border: 1px solid rgb(212, 0, 131);
+}
+
+.review-card {
+    border: 1px solid rgb(212, 0, 131);
+    margin-bottom: 8pt;
+    padding: 5pt;
+}
+
+.reviewer-name {
+    color: rgb(0, 207, 45);
 }
 
 #review-input {

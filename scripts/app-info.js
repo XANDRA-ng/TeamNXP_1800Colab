@@ -20,11 +20,23 @@ $(document).ready(function() {
                 var version = doc.data().version;
                 var date = doc.data().date;
                 var description = doc.data().description;
+                var application = doc.data().application;
                 console.log(name);
                 $("#app-name").text(name);
                 $("#dev-name").text("By: " + devname);
-                //$("#dev-name").text("By: " + devname);
                 $("#category").text(category);
+                if (application == true) {
+                    $("#app-or-idea").text("application").css({
+                        borderRadius: "10pt",
+                        backgroundColor: "rgb(90, 14, 45)"
+                    });
+                } else {
+                    $("#app-or-idea").text("idea").css({
+                        borderRadius: "10pt",
+                        backgroundColor: "rgb(90, 14, 45)"
+                    });
+                }
+
                 $("#link").append("<a href='" + link + "' > " + link);
                 $("#version").text("Version: " + version);
                 $("#date").text("Release date: " + date);
@@ -110,11 +122,11 @@ $(document).ready(function() {
                     var display_date = doc.data().reviewDate;
 
                     //console.log(display_date);
-                    var eachReview = '<div class="review-box">' +
+                    var eachReview = '<div class="review-goes-here">' +
                         '<h5 class="reviewer-name">' + display_name + '</h5>' +
                         '<p class="review-comment">' + display_review + '</p>' +
                         '<p class="review-date"><small class="text-muted">' + display_date +
-                        '</small></p>'
+                        '</small></p>' + '</div>';
 
                     $("#review").append("<div style='color:white' class='review-card'>" + eachReview + "</div>");
                 })
