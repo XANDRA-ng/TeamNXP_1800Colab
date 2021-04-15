@@ -2,15 +2,12 @@
 
 // use this ID to read from firestore
 $(document).ready(function() {
+
+    const parsedUrl = new URL(window.location.href);
+    // extract id from url, assign to variable
+    var id = parsedUrl.searchParams.get("id");
+
     function getDetails() {
-        // https://some.site/?id=123
-        const parsedUrl = new URL(window.location.href);
-        console.log(parsedUrl.searchParams.get("id")); // "123"
-
-        // extract id from url, assign to variable
-        var id = parsedUrl.searchParams.get("id");
-        console.log(id + " is id");
-
         // use this ID to read from firestore
         db.collection("apps")
             .doc(id) //webcam ID that we extracted
@@ -32,6 +29,7 @@ $(document).ready(function() {
                 $("#version").text("Version: " + version);
                 $("#date").text("Release date: " + date);
                 $("#description").text(description);
+                showReviews(id);
             })
     }
     getDetails();
@@ -40,11 +38,9 @@ $(document).ready(function() {
         document.getElementById("submit-button").addEventListener('click', function() {
             firebase.auth().onAuthStateChanged(function(user) {
                 const parsedUrl = new URL(window.location.href);
-                console.log(parsedUrl.searchParams.get("id")); // "123"
 
                 // extract id from url, assign to variable
                 var id = parsedUrl.searchParams.get("id");
-                console.log(id + " this app id");
 
                 console.log(user.uid);
                 db.collection("users").doc(user.uid)
@@ -52,12 +48,16 @@ $(document).ready(function() {
                     .then(function(doc) {
                         var reviewer_name = doc.data().name;
                         var review = document.getElementById("review-type").value;
+                        var postDate = new Date();
+                        var dateString = postDate.toString();
+                        console.log(postDate);
                         db.collection("apps")
                             .doc(id)
                             .collection("review")
                             .add({
                                 "reviewer_name": reviewer_name, //from text field
                                 "review_input": review, //from checkbox
+                                "reviewDate": dateString,
                             })
                         console.log("review added" + review + reviewer_name);
                     })
@@ -65,26 +65,38 @@ $(document).ready(function() {
                         console.log("get collection of review")
                         showReviews(id)
                     })
+
             })
         })
     }
     getReviews();
+    //showReviews(id);
 
     function showReviews(id) {
         db.collection("apps")
             .doc(id)
             .collection("review")
+            .orderBy("reviewDate", "asc")
             .get()
             .then(function(snapCollection) {
                 snapCollection.forEach(function(doc) {
                     var display_review = doc.data().review_input;
                     var display_name = doc.data().reviewer_name;
-                    console.log(display_name + " :get name successfully");
-                    console.log(display_review + " :get review successfully");
-                    
+                    var display_date = doc.data().reviewDate;
+
+                    console.log(display_date);
+                    var eachReview = '<div class="review-box">' +
+                        '<h5 class="reviewer-name">' + display_name + '</h5>' +
+                        '<p class="review-comment">' + display_review + '</p>' +
+                        '<p class="review-date"><small class="text-muted">' + display_date +
+                        '</small></p>'
+
+                    $("#review").append("<div style='cursor:pointer, color:white' class='review-card'>" + eachReview + "</div>");
                 })
 
             })
+
     }
+
 
 });

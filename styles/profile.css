@@ -2,8 +2,6 @@ body {
     width: 100%;
     background-color: black;
 }
-
-
 #navbar {
     position: sticky;
     top: 0;
