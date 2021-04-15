@@ -49,8 +49,12 @@ body {
 }
 
 #description-box {
-    margin: 5pt;
     overflow-y: scroll;
+    border: 1px solid rgb(212, 0, 131);
+}
+
+#description {
+    padding: 5pt;
 }
 
 #review {
@@ -112,9 +116,6 @@ body {
         display: grid;
         grid-row: 2;
         grid-column: 1 / span 2;
-    }
-    #description-box {
-        max-width: 250px;
     }
     #review {
         height: 200px;

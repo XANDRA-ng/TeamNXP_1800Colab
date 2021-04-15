@@ -1,6 +1,7 @@
 body {
     background-color: black;
     height: 1080px;
+    color: rgba(0, 223, 67, 0.733);
 }
 
 #navbar {
@@ -28,9 +29,7 @@ body {
 
 .feature-wrapper {
     padding-top: 20pt;
-    margin-bottom: 30px
-    
-    
+    margin-bottom: 20pt
 }
 
 .feature-box {
@@ -43,7 +42,30 @@ body {
     display: flex;
     align-items: center;
     text-align: center;
+}
 
+.feature-box div {
+    margin: 0 auto;
+    color: rgb(212, 0, 131);
+}
+
+.each-app {
+    margin: 20pt auto 20pt auto;
+    border: 1px solid rgb(212, 0, 131);
+}
+
+#banner {
+    text-align: center;
+    background-color: rgba(72, 117, 82, 0.637);
+    line-height: 5px;
+    font-size: 2em;
+}
+
+#banner span {
+    background-color: black;
+    padding-left: 15pt;
+    padding-right: 15pt;
+    color: rgb(203, 221, 221);
 }
 
 @media only screen and (min-width: 768px) {

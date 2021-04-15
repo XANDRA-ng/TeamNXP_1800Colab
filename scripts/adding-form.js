@@ -35,11 +35,18 @@ $(document).ready(function() {
                         "link": link,
                         "description": desc,
                     })
+                    .then(function() {
+                        redirectToSuccess();
+                    })
 
             })
 
         })
     }
     getApp();
+
+    function redirectToSuccess() {
+        window.location.href = "completely-added.html"
+    }
 
 });

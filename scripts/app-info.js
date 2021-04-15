@@ -27,13 +27,11 @@ $(document).ready(function() {
                 $("#category").text(category);
                 if (application == true) {
                     $("#app-or-idea").text("application").css({
-                        borderRadius: "10pt",
-                        backgroundColor: "rgb(90, 14, 45)"
+                        color: "white"
                     });
                 } else {
                     $("#app-or-idea").text("idea").css({
-                        borderRadius: "10pt",
-                        backgroundColor: "rgb(90, 14, 45)"
+                        color: "dimgray"
                     });
                 }
 

@@ -33,15 +33,17 @@ $(document).ready(function() {
                     var id = doc.id; //document id of that webcam
                     var name = doc.data().name;
                     var dev_name = doc.data().dev_name;
+                    var category = doc.data().category;
 
-                    var codeString = '<div class="mb-3" style = "width: 90%">' +
+                    var codeString = '<div class="each-app" style ="width: 90%">' +
                         '<div class="row g-0 row-cols-auto" >' + '<div class="col-4">' +
                         '<img src="images/pineapple.jpg" style = "width: 100px; padding: 5pt";>' +
                         '</div>' +
-                        '<div class="col-7 align-self-center mt-3">' +
+                        '<div class="col-7 align-self-center">' +
                         '<div>' +
                         '<h4>' + name + '</h4>' +
-                        '<p>By: ' + dev_name + '</p>' +
+                        '<span>By: ' + dev_name + '</span>' +
+                        '<br><span>' + category + '</span>' +
                         '</div>' + '</div>'
 
                     $("#app-goes-here").append("<div style='cursor:pointer' id='" + id + "'>" + codeString + "</div>");
