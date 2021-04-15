@@ -65,7 +65,6 @@ $(document).ready(function() {
                         console.log("get collection of review")
                         showReviews(id)
                     })
-
             })
         })
     }
@@ -82,36 +81,10 @@ $(document).ready(function() {
                     var display_name = doc.data().reviewer_name;
                     console.log(display_name + " :get name successfully");
                     console.log(display_review + " :get review successfully");
-                    // var eachReview =
+                    
                 })
 
             })
-
     }
-
-    /**function getReview() {
-        document.getElementById("submit").addEventListener('click', function() {
-
-            const parsedUrl = new URL(window.location.href);
-            console.log(parsedUrl.searchParams.get("id")); // "123"
-
-            // extract id from url, assign to variable
-            var id = parsedUrl.searchParams.get("id");
-            console.log(id + " is id");
-
-            firebase.auth().onAuthStateChanged(function(user) {
-                var reviewDesc = document.getElementById("reviewDesc").value;
-                console.log(reviewDesc);
-                db.collection("reviews")
-                    .add({
-                        "review_description": reviewDesc,
-                    })
-
-            })
-
-        })
-    }
-    getReview();*/
-
 
 });
