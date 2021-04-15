@@ -62,8 +62,8 @@ $(document).ready(function() {
                         console.log("review added" + review + reviewer_name);
                     })
                     .then(function() {
-                        console.log("get collection of review")
-                        showReviews(id)
+                        console.log("get one review")
+                        showOneReview(id)
                     })
 
             })
@@ -91,11 +91,35 @@ $(document).ready(function() {
                         '<p class="review-date"><small class="text-muted">' + display_date +
                         '</small></p>'
 
-                    $("#review").append("<div style='cursor:pointer, color:white' class='review-card'>" + eachReview + "</div>");
+                    $("#review").append("<div style='color:white' class='review-card'>" + eachReview + "</div>");
                 })
 
             })
 
+    }
+
+    function showOneReview(id) {
+        db.collection("apps")
+            .doc(id)
+            .collection("review")
+            .onSnapshot((snap) => {
+                snap.docChanges().forEach(function(change) {
+                    if (change.type === "added") {
+                        var one_review = change.doc.data().review_input;
+                        var one_name = change.doc.data().reviewer_name;
+                        var one_date = change.doc.data().reviewDate;
+                        console.log(one_review);
+                        var oneReview = '<div class="review-box">' +
+                            '<h5 class="reviewer-name">' + one_name + '</h5>' +
+                            '<p class="review-comment">' + one_review + '</p>' +
+                            '<p class="review-date"><small class="text-muted">' + one_date +
+                            '</small></p>'
+
+                        $("#review").append("<div style='color:white' class='review-card'>" + oneReview + "</div>");
+                    }
+                })
+
+            })
     }
 
 
