@@ -3,9 +3,11 @@ $(document).ready(function() {
     function getApp() {
         document.getElementById("submit").addEventListener('click', function() {
             firebase.auth().onAuthStateChanged(function(user) {
+                // user choice in the adding form (application or idea)
                 var application = document.getElementById("app").checked;
                 var idea = document.getElementById("idea").checked;
 
+                //value from text field.
                 var n = document.getElementById("name").value;
                 var dn = document.getElementById("devname").value;
                 var desc = document.getElementById("desc").value;
@@ -13,6 +15,8 @@ $(document).ready(function() {
                 var date = document.getElementById("date").value;
                 var category = document.getElementById("cate").value;
                 var link = document.getElementById("link").value;
+
+                //test if the value is successfully get
                 console.log(n);
                 console.log(dn);
                 console.log(desc);
@@ -36,7 +40,7 @@ $(document).ready(function() {
                         "description": desc,
                     })
                     .then(function() {
-                        redirectToSuccess();
+                        redirectToSuccess(); // Redirect only the app is submit
                     })
 
             })

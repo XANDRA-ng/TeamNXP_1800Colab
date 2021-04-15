@@ -10,9 +10,10 @@ $(document).ready(function() {
     function getDetails() {
         // use this ID to read from firestore
         db.collection("apps")
-            .doc(id) //webcam ID that we extracted
+            .doc(id) //app ID that we extracted
             .get() //READ asynch
-            .then(function(doc) { // display details!
+            .then(function(doc) {
+                // display all the details for the app!
                 var name = doc.data().name;
                 var devname = doc.data().dev_name;
                 var category = doc.data().category;
@@ -25,6 +26,8 @@ $(document).ready(function() {
                 $("#app-name").text(name);
                 $("#dev-name").text("By: " + devname);
                 $("#category").text(category);
+
+                //if the application is true, return text "application", else "idea"
                 if (application == true) {
                     $("#app-or-idea").text("application").css({
                         color: "white"
@@ -39,7 +42,7 @@ $(document).ready(function() {
                 $("#version").text("Version: " + version);
                 $("#date").text("Release date: " + date);
                 $("#description").text(description);
-                showReviews(id);
+                showReviews(id); // show all the existence reviews, only call once
             })
     }
     getDetails();
@@ -73,7 +76,7 @@ $(document).ready(function() {
                     })
                     .then(function() {
                         console.log("get one review")
-                        showOneReview(id)
+                        showOneReview(id) // show only the newly added review
                     })
 
             })
@@ -81,6 +84,7 @@ $(document).ready(function() {
     }
     getReviews();
 
+    // show all the existed review, onlu call once
     function showReviews(id) {
         db.collection("apps")
             .doc(id)
@@ -107,17 +111,18 @@ $(document).ready(function() {
 
     }
 
+    // show only the newly added review
     function showOneReview(id) {
         db.collection("apps")
             .doc(id)
             .collection("review")
-            .orderBy("reviewDate", "desc").limit(1)
+            .orderBy("reviewDate", "desc").limit(1) //get only one review, sort according to the review date and time
             .get()
             .then(function(snapCollection) {
                 snapCollection.forEach(function(doc) {
-                    var display_review = doc.data().review_input;
-                    var display_name = doc.data().reviewer_name;
-                    var display_date = doc.data().reviewDate;
+                    var display_review = doc.data().review_input; // Reviewer input 
+                    var display_name = doc.data().reviewer_name; // Reviewer name
+                    var display_date = doc.data().reviewDate; // the timestamp of the review
 
                     //console.log(display_date);
                     var eachReview = '<div class="review-goes-here">' +

@@ -23,15 +23,14 @@ $(document).ready(function() {
     sayHello();
 
     function displayAllApps() {
-        //console.log("inside display web cams");
         db.collection("apps")
             .get() //READ asynch
             .then(function(snapcollection) {
-                snapcollection.forEach(function(doc) {
+                snapcollection.forEach(function(doc) { //read each document in the collection
                     console.log(doc.data().name);
                     console.log(doc.id);
                     var id = doc.id; //document id of that webcam
-                    var name = doc.data().name;
+                    var name = doc.data().name; //name value of the document
                     var dev_name = doc.data().dev_name;
                     var category = doc.data().category;
 
@@ -57,7 +56,7 @@ $(document).ready(function() {
         document.getElementById(id)
             .addEventListener("click", function() {
                 console.log(id + "was clicked!")
-                window.location.href = "app-info.html?id=" + id;
+                window.location.href = "app-info.html?id=" + id; // Redirect page when click
             });
     }
 
