@@ -1,6 +1,7 @@
 body {
     background-color: black;
 }
+
 .form-box {
     margin: 50pt auto 0 auto;
     padding: 50pt;
@@ -19,11 +20,12 @@ body {
     }
 }
 
-@media only screen and (min-width: 768px){
+@media only screen and (min-width: 768px) {
     #search {
         position: fixed;
         right: 20pt;
     }
+
     .form-box {
         margin: 20pt auto 0 auto;
         width: 85%;

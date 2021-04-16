@@ -1,18 +1,20 @@
-//--------------------------------------------------------------------------
+$(document).ready(function () {
 
-// use this ID to read from firestore
-$(document).ready(function() {
-
+    /** the parsed url */
     const parsedUrl = new URL(window.location.href);
-    // extract id from url, assign to variable
+
+    /** extract id from url, assign to variable */
     var id = parsedUrl.searchParams.get("id");
 
+    /**
+     * Gets all the details from the apps document and puts the details to their respective id
+     */
     function getDetails() {
         // use this ID to read from firestore
         db.collection("apps")
             .doc(id) //app ID that we extracted
             .get() //READ asynch
-            .then(function(doc) {
+            .then(function (doc) {
                 // display all the details for the app!
                 var name = doc.data().name;
                 var devname = doc.data().dev_name;
@@ -28,7 +30,7 @@ $(document).ready(function() {
                 $("#dev-name").text("By: " + devname);
                 $("#category").text(category);
 
-                //if the application is true, return text "application", else "idea"
+                // If the application is true, return text "application", else "idea."
                 if (application == true) {
                     $("#app-or-idea").text("application").css({
                         color: "white"
@@ -44,14 +46,19 @@ $(document).ready(function() {
                 $("#version").text("Version: " + version);
                 $("#date").text("Release date: " + date);
                 $("#description").text(description);
-                showReviews(id); // show all the existence reviews, only call once
+
+                // Show all the existence reviews, only call once.
+                showReviews(id);
             })
     }
     getDetails();
 
+    /**
+     * Gets the reviews from the user and stores it on a collection called reviews stored in that app.
+     */
     function getReviews() {
-        document.getElementById("submit-button").addEventListener('click', function() {
-            firebase.auth().onAuthStateChanged(function(user) {
+        document.getElementById("submit-button").addEventListener('click', function () {
+            firebase.auth().onAuthStateChanged(function (user) {
                 const parsedUrl = new URL(window.location.href);
 
                 // extract id from url, assign to variable
@@ -60,7 +67,7 @@ $(document).ready(function() {
                 console.log(user.uid);
                 db.collection("users").doc(user.uid)
                     .get()
-                    .then(function(doc) {
+                    .then(function (doc) {
                         var reviewer_name = doc.data().name;
                         var review = document.getElementById("review-type").value;
                         var postDate = new Date();
@@ -76,7 +83,7 @@ $(document).ready(function() {
                             })
                         console.log("review added" + review + reviewer_name);
                     })
-                    .then(function() {
+                    .then(function () {
                         console.log("get one review")
                         showOneReview(id) // show only the newly added review
                     })
@@ -86,15 +93,17 @@ $(document).ready(function() {
     }
     getReviews();
 
-    // show all the existed review, onlu call once
+    /**
+     * Gets all the reviews submitted by users and shows them on the respective div.
+     */
     function showReviews(id) {
         db.collection("apps")
             .doc(id)
             .collection("review")
             .orderBy("reviewDate", "asc")
             .get()
-            .then(function(snapCollection) {
-                snapCollection.forEach(function(doc) {
+            .then(function (snapCollection) {
+                snapCollection.forEach(function (doc) {
                     var display_review = doc.data().review_input;
                     var display_name = doc.data().reviewer_name;
                     var display_date = doc.data().reviewDate;
@@ -120,8 +129,8 @@ $(document).ready(function() {
             .collection("review")
             .orderBy("reviewDate", "desc").limit(1) //get only one review, sort according to the review date and time
             .get()
-            .then(function(snapCollection) {
-                snapCollection.forEach(function(doc) {
+            .then(function (snapCollection) {
+                snapCollection.forEach(function (doc) {
                     var display_review = doc.data().review_input; // Reviewer input 
                     var display_name = doc.data().reviewer_name; // Reviewer name
                     var display_date = doc.data().reviewDate; // the timestamp of the review

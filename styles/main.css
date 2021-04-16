@@ -72,10 +72,12 @@ body {
     #logo {
         width: 120px;
     }
+
     .feature-wrapper {
         display: flex;
         justify-content: space-evenly;
     }
+
     .feature-box {
         width: 30%;
         height: 200px;
@@ -86,6 +88,7 @@ body {
     #logo {
         width: 100px;
     }
+
     .feature-box {
         width: 80%;
         height: 80px;

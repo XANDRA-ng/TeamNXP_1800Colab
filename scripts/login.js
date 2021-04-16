@@ -1,10 +1,8 @@
-// JS files: Your own JavaScript functions included here
-
 // Initialize the FirebaseUI Widget using Firebase.
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
 var uiConfig = {
     callbacks: {
-        signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+        signInSuccessWithAuthResult: function (authResult, redirectUrl) {
             // User successfully signed in.
             // Return type determines whether we continue the redirect automatically
             // or whether we leave that to developer to handle.
@@ -21,11 +19,11 @@ var uiConfig = {
                 db.collection("users").doc(user.uid).set({ //write to firestore
                         name: user.displayName, //"users" collection
                         email: user.email //with authenticated user's ID (user.uid)
-                    }).then(function() {
+                    }).then(function () {
                         console.log("New user added to firestore");
                         window.location.assign("main.html"); //re-direct to main.html after signup
                     })
-                    .catch(function(error) {
+                    .catch(function (error) {
                         console.log("Error adding new user: " + error);
                     });
             } else {
@@ -33,7 +31,7 @@ var uiConfig = {
             }
             return false;
         },
-        uiShown: function() {
+        uiShown: function () {
             // The widget is rendered.
             // Hide the loader.
             document.getElementById('loader').style.display = 'none';

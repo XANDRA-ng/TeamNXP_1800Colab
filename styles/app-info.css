@@ -82,6 +82,7 @@ body {
     #logo {
         width: 100px;
     }
+
     #icon {
         max-width: 120px;
         max-height: 120px;
@@ -89,17 +90,20 @@ body {
         display: block;
         border-radius: 5px;
     }
+
     #icon-box {
         display: grid;
         grid-row: 1;
         grid-column: 1;
     }
+
     #name-box {
         display: grid;
         grid-row: 1;
         grid-column: 2;
         margin-left: 5pt;
     }
+
     #info-box {
         display: grid;
         grid-row: 1;
@@ -108,18 +112,22 @@ body {
         grid-gap: 1em;
         margin-bottom: 20pt;
     }
+
     #app-name {
         font-size: 1.5em;
         font-weight: bold;
     }
+
     #link-box {
         display: grid;
         grid-row: 2;
         grid-column: 1 / span 2;
     }
+
     #review {
         height: 200px;
     }
+
     #photo-box {
         height: 350px;
         margin-bottom: 20pt;
@@ -130,36 +138,44 @@ body {
     #logo {
         width: 120px;
     }
+
     .info-container {
         display: grid;
         grid-template-columns: 55% 45%;
         grid-gap: 0pt;
     }
+
     #left-container {
         display: grid;
         grid-column: 1;
         grid-template-rows: 60vh 70vh;
     }
+
     #right-container {
         display: grid;
         grid-column: 2;
         grid-template-rows: 60vh 70vh;
     }
+
     #description-box {
         display: grid;
         grid-row: 1;
         box-shadow: 0px 0px 8px rgb(116, 116, 116);
     }
+
     #review-box {
         display: grid;
         grid-row: 2;
     }
+
     #review-input {
         box-shadow: 0px 0px 8px rgb(116, 116, 116);
     }
+
     #review {
         box-shadow: 0px 0px 8px rgb(116, 116, 116);
     }
+
     #info-box {
         display: grid;
         grid-row: 1;
@@ -168,23 +184,28 @@ body {
         grid-gap: 1em;
         box-shadow: 0px 0px 8px rgb(116, 116, 116);
     }
+
     #icon {
         width: 100%;
         object-fit: cover;
     }
+
     #dev-name {
         margin-top: -15pt;
         font-size: 1em;
     }
+
     #name-box {
         display: grid;
         grid-row: 1;
         grid-column: 2;
     }
+
     #app-name {
         font-size: 1.8em;
         font-weight: bold;
     }
+
     #link-box {
         display: grid;
         grid-row: 2;
@@ -192,12 +213,14 @@ body {
         padding: 10pt;
         margin-top: -30pt;
     }
+
     #icon-box {
         display: grid;
         grid-row: 1;
         grid-column: 1;
         padding: 10pt;
     }
+
     #photo-box {
         display: grid;
         grid-row: 2;

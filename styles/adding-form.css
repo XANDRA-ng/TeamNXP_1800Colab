@@ -30,10 +30,12 @@ body {
 #mypic-goes-here {
     width: 200px;
 }
+
 @media only screen and (max-width: 768px) {
     #logo {
         width: 100px;
     }
+
     #form-wrapper {
         margin: 20pt auto 0 auto;
         width: 100%;
@@ -45,6 +47,7 @@ body {
     #logo {
         width: 120px;
     }
+
     #form-wrapper {
         margin: 20pt auto 0 auto;
         width: 85%;

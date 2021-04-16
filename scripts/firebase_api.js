@@ -1,8 +1,3 @@
-//---------------------------------------------------
-// replace the lines below with your own "firebaseConfig"
-// key value pairs
-//---------------------------------------------------
-
 // Your web app's Firebase configuration
 var firebaseConfig = {
     apiKey: "AIzaSyD2MlqlqIaVOwyPkES9xgyufBeAl4M6eOQ",

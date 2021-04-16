@@ -1,19 +1,32 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
+    /** Is the created apps document's ID */
     var docAppID;
-    const fileInput = document.getElementById("icon"); // pointer #1
-    const image = document.getElementById("mypic-goes-here"); // pointer #2
+
+    /** Where to get the icon image */
+    const fileInput = document.getElementById("icon");
+
+    /** Where to preview the icon image */
+    const image = document.getElementById("mypic-goes-here");
+
+    /** Is the icon image */
     var file;
+
+    /** Where to store the icon image */
     var storageRef;
 
+    /**
+     * Updates the apps document to include all the information to be stored It also usesthe uploadIconPic()
+     * function to update the icon pic to the document and send the user to the completely-added.html .
+     */
     function getApp() {
-        document.getElementById("submit").addEventListener('click', function() {
-            firebase.auth().onAuthStateChanged(function(user) {
-                // user choice in the adding form (application or idea)
+        document.getElementById("submit").addEventListener('click', function () {
+            firebase.auth().onAuthStateChanged(function (user) {
+                // User choice in the adding form (application or idea).
                 var application = document.getElementById("app").checked;
                 var idea = document.getElementById("idea").checked;
 
-                //value from text field.
+                // Value from text field.
                 var n = document.getElementById("name").value;
                 var dn = document.getElementById("devname").value;
                 var desc = document.getElementById("desc").value;
@@ -22,7 +35,7 @@ $(document).ready(function() {
                 var category = document.getElementById("cate").value;
                 var link = document.getElementById("link").value;
 
-                //test if the value is successfully get
+                // Test if the value is successfully get.
                 console.log(n);
                 console.log(dn);
                 console.log(desc);
@@ -33,9 +46,10 @@ $(document).ready(function() {
                 console.log(application);
                 console.log(idea);
 
+                // Updates the apps document.
                 db.collection("apps")
                     .doc(docAppID).update({
-                        "name": n, //from text field
+                        "name": n,
                         "application": application,
                         "idea": idea,
                         "dev_name": dn,
@@ -45,7 +59,8 @@ $(document).ready(function() {
                         "link": link,
                         "description": desc,
                     })
-                    .then(function() {
+                    // Does the uploadIconPic() function.
+                    .then(function () {
                         uploadIconPic();
                     })
             })
@@ -53,10 +68,14 @@ $(document).ready(function() {
     }
     getApp();
 
+    /**
+     * Makes the apps document on page start up. Just a shoddy way of doing this, could be better.
+     * When reloading the page it will make a new apps document that is empty and undefined.
+     */
     function makeApp() {
         window.addEventListener('load', (event) => {
             db.collection("apps").add({})
-                .then(function(doc) {
+                .then(function (doc) {
                     docAppID = doc.id;
                     console.log("app id!" + docAppID);
                 })
@@ -64,36 +83,48 @@ $(document).ready(function() {
     }
     makeApp()
 
+    /**
+     * Shows a preview of the app icon and puts that icon into the firebase storage.
+     */
     function showIconPicture() {
-        // listen for file selection
-        fileInput.addEventListener('change', function(e) { //event listener
+        // Listen for file selection.
+        fileInput.addEventListener('change', function (e) {
             file = e.target.files[0];
             var blob = URL.createObjectURL(e.target.files[0]);
-            image.src = blob; //change DOM image
+            // Change DOM image.
+            image.src = blob;
 
-            //store using this name
+            // Store using this name.
             storageRef = storage.ref("images/" + docAppID + "icon.jpg");
 
             storageRef.put(file)
-                .then(function() {
+                .then(function () {
                     console.log('Uploaded to Cloud Storage.');
                 })
         })
     }
     showIconPicture();
 
+    /**
+     * Redirects to the completely-added.html .
+     */
     function redirectToSuccess() {
         window.location.href = "completely-added.html"
     }
 
+    /**
+     * Updates the apps document to include the link of the icon image. Does the redirectToSuccess() function as well.
+     */
     function uploadIconPic() {
         storageRef.getDownloadURL()
-            .then(function(url) { // Get URL of the uploaded file
-                console.log(url); // Save the URL into users collection
+            // Get URL of the uploaded file
+            .then(function (url) {
+                console.log(url);
+                // Save the URL into apps document
                 db.collection("apps").doc(docAppID).update({
                         "IconPic": url
                     })
-                    .then(function() {
+                    .then(function () {
                         console.log('Added Icon Pic URL to Firestore.');
                         redirectToSuccess();
                     })
