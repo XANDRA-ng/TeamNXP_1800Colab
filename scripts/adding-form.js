@@ -1,8 +1,8 @@
 $(document).ready(function() {
 
     var docAppID;
-    const fileInput = document.getElementById("icon");   // pointer #1
-    const image = document.getElementById("mypic-goes-here");   // pointer #2
+    const fileInput = document.getElementById("icon"); // pointer #1
+    const image = document.getElementById("mypic-goes-here"); // pointer #2
     var file;
     var storageRef;
 
@@ -21,7 +21,7 @@ $(document).ready(function() {
                 var date = document.getElementById("date").value;
                 var category = document.getElementById("cate").value;
                 var link = document.getElementById("link").value;
-                
+
                 //test if the value is successfully get
                 console.log(n);
                 console.log(dn);
@@ -45,7 +45,7 @@ $(document).ready(function() {
                         "link": link,
                         "description": desc,
                     })
-                    .then(function(){
+                    .then(function() {
                         uploadIconPic();
                     })
                     // .then(function() {
@@ -58,32 +58,31 @@ $(document).ready(function() {
     }
     getApp();
 
-    function makeApp(){
+    function makeApp() {
         window.addEventListener('load', (event) => {
-            db.collection("apps").add({
-            })
-            .then(function(doc){
-                docAppID = doc.id;
-                console.log("app id!" + docAppID);
-            })
-          });
+            db.collection("apps").add({})
+                .then(function(doc) {
+                    docAppID = doc.id;
+                    console.log("app id!" + docAppID);
+                })
+        });
     }
     makeApp()
 
-    function showIconPicture(){
+    function showIconPicture() {
         // listen for file selection
-        fileInput.addEventListener('change', function(e){        //event listener
+        fileInput.addEventListener('change', function(e) { //event listener
             file = e.target.files[0];
             var blob = URL.createObjectURL(e.target.files[0]);
-            image.src = blob;    //change DOM image
+            image.src = blob; //change DOM image
 
             //store using this name
-            storageRef = storage.ref("images/" + docAppID + "icon.jpg"); 
+            storageRef = storage.ref("images/" + docAppID + "icon.jpg");
 
-            storageRef.put(file) 
-                        .then(function(){
-                            console.log('Uploaded to Cloud Storage.');
-                        })
+            storageRef.put(file)
+                .then(function() {
+                    console.log('Uploaded to Cloud Storage.');
+                })
         })
     }
     showIconPicture();
@@ -93,14 +92,14 @@ $(document).ready(function() {
 
     function uploadIconPic() {
         storageRef.getDownloadURL()
-            .then(function (url) {   // Get URL of the uploaded file
-                console.log(url);    // Save the URL into users collection
+            .then(function(url) { // Get URL of the uploaded file
+                console.log(url); // Save the URL into users collection
                 db.collection("apps").doc(docAppID).update({
-                    "IconPic": url
-                })
-                .then(function(){
-                    console.log('Added Icon Pic URL to Firestore.');
-                })
+                        "IconPic": url
+                    })
+                    .then(function() {
+                        console.log('Added Icon Pic URL to Firestore.');
+                    })
             })
     }
 });
