@@ -22,6 +22,7 @@ $(document).ready(function() {
                 var date = doc.data().date;
                 var description = doc.data().description;
                 var application = doc.data().application;
+                var icon = doc.data().IconPic;
                 console.log(name);
                 $("#app-name").text(name);
                 $("#dev-name").text("By: " + devname);
@@ -38,6 +39,7 @@ $(document).ready(function() {
                     });
                 }
 
+                $("#icon-box").append("<img id='icon' src='" + icon + "' class='mx-auto d-block'>");
                 $("#link").append("<a href='" + link + "' > " + link);
                 $("#version").text("Version: " + version);
                 $("#date").text("Release date: " + date);
