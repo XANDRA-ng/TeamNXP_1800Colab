@@ -42,7 +42,7 @@ $(document).ready(function () {
                 }
 
                 $("#icon-box").append("<img id='icon' src='" + icon + "' class='mx-auto d-block'>");
-                $("#link").append("<a href='" + link + "' > " + link);
+                $("#link").append("<a href='https://" + link + "' > " + link);
                 $("#version").text("Version: " + version);
                 $("#date").text("Release date: " + date);
                 $("#description").text(description);
