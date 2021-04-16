@@ -48,12 +48,7 @@ $(document).ready(function() {
                     .then(function(){
                         uploadIconPic();
                     })
-                    // .then(function() {
-                    //     redirectToSuccess(); // Redirect only the app is submit
-                    // })
-
             })
-
         })
     }
     getApp();
@@ -87,9 +82,10 @@ $(document).ready(function() {
         })
     }
     showIconPicture();
-    // function redirectToSuccess() {
-    //     window.location.href = "completely-added.html"
-    // }
+    
+    function redirectToSuccess() {
+        window.location.href = "completely-added.html"
+    }
 
     function uploadIconPic() {
         storageRef.getDownloadURL()
@@ -100,6 +96,7 @@ $(document).ready(function() {
                 })
                 .then(function(){
                     console.log('Added Icon Pic URL to Firestore.');
+                    redirectToSuccess();
                 })
             })
     }
