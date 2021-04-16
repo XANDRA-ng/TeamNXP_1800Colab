@@ -55,7 +55,7 @@ $(document).ready(function() {
 
     function makeApp() {
         window.addEventListener('load', (event) => {
-            db.collection("apps").add({})
+            db.collection("apps").set({})
                 .then(function(doc) {
                     docAppID = doc.id;
                     console.log("app id!" + docAppID);
